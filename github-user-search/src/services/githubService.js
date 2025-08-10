@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 export const fetchAdvancedUserData = async (params) => {
-  const { username, location, repos } = params;
-  let query = `${username}`;
+  const { username, location, minRepos } = params;
+  let query = username ? `${username}` : '';
   if (location) query += `+location:${location}`;
-  if (repos) query += `+repos:>${repos}`;
+  if (minRepos) query += `+repos:>${minRepos}`;
   
   try {
     const response = await axios.get(
