@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { fetchAdvancedUserData, fetchUserDetails } from '../services/githubService';
+import { fetchUserData, fetchAdvancedUserData, fetchUserDetails } from '../services/githubService';
 
 export default function Search() {
   const [searchParams, setSearchParams] = useState({
@@ -20,17 +20,33 @@ export default function Search() {
     e.preventDefault();
     setLoading(true);
     setError(null);
+    setUsers([]);
     try {
-      const userList = await fetchAdvancedUserData(searchParams);
-      const usersWithDetails = await Promise.all(
-        userList.map(async (user) => {
-          const details = await fetchUserDetails(user.login);
-          return { ...user, ...details };
-        })
-      );
-      setUsers(usersWithDetails);
+      // If only username is provided, use fetchUserData
+      if (
+        searchParams.username &&
+        !searchParams.location &&
+        !searchParams.minRepos
+      ) {
+        const user = await fetchUserData(searchParams.username);
+        setUsers([user]);
+      } else {
+        // Advanced search
+        const userList = await fetchAdvancedUserData(searchParams);
+        const usersWithDetails = await Promise.all(
+          userList.map(async (user) => {
+            const details = await fetchUserDetails(user.login);
+            return { ...user, ...details };
+          })
+        );
+        setUsers(usersWithDetails);
+      }
     } catch (err) {
-      setError('Failed to fetch users');
+      setError(
+        searchParams.username && !searchParams.location && !searchParams.minRepos
+          ? "Looks like we cant find the user"
+          : "Failed to fetch users"
+      );
     } finally {
       setLoading(false);
     }
