@@ -1,0 +1,95 @@
+[
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://img.freepik.com/premium-photo/pasta-carbonara-delight-high-resolution-image-300-dpi_1154540-56.jpg",
+    "ingredients": [
+      "200g spaghetti",
+      "100g pancetta or bacon",
+      "2 large eggs",
+      "50g grated Parmesan cheese",
+      "2 cloves garlic (optional)",
+      "Salt & black pepper to taste"
+    ],
+    "instructions": [
+      "Boil pasta in salted water until al dente.",
+      "Fry pancetta until crisp, add garlic if using.",
+      "Beat eggs with Parmesan and black pepper.",
+      "Drain pasta and toss with pancetta.",
+      "Remove from heat, quickly stir in egg mixture.",
+      "Serve hot with extra cheese."
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken cooked in a creamy tomato-based gravy.",
+    "image": "https://chickenrecipes.blog/wp-content/uploads/2024/10/EasyChicken-Tikka-Masala.jpg",
+    "ingredients": [
+      "500g chicken breast, cubed",
+      "1 cup plain yogurt",
+      "2 tbsp tikka masala paste",
+      "1 onion, chopped",
+      "2 cloves garlic",
+      "1 cup tomato puree",
+      "1/2 cup cream",
+      "Salt and pepper"
+    ],
+    "instructions": [
+      "Marinate chicken in yogurt and tikka paste for at least 1 hour.",
+      "Grill or pan-fry chicken until golden.",
+      "Sauté onion and garlic until soft.",
+      "Add tomato puree and simmer 5 mins.",
+      "Stir in cream and grilled chicken.",
+      "Simmer for another 10 mins and serve."
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Bitterleaf Soup",
+    "summary": "Traditional Nigerian soup with assorted meats, cocoyam thickener, and bitterleaf.",
+    "image":"https://allnigerianfoods.com/wp-content/uploads/bitter-leave-soup-recipe.jpg",
+    "ingredients": [
+      "500g goat meat",
+      "1/2 cow head (optional)",
+      "Dry catfish",
+      "Stockfish",
+      "Snail (optional)",
+      "Cocoyam puree",
+      "Bitterleaf (washed)",
+      "Palm oil",
+      "Seasoning cubes",
+      "Salt"
+    ],
+    "instructions": [
+      "Boil meats and stockfish with seasoning until tender.",
+      "Add palm oil and allow to simmer.",
+      "Stir in cocoyam puree to thicken.",
+      "Add bitterleaf and stir well.",
+      "Simmer for 10 minutes and serve."
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Nsala Soup",
+    "summary": "Nigerian white soup made with yam puree, meats, and utazi leaves.",
+    "image": "https://i.ytimg.com/vi/aEkmtM9w1kI/maxresdefault.jpg",
+    "ingredients": [
+      "500g chicken or goat meat",
+      "Fresh catfish",
+      "Stockfish",
+      "Yam puree (pounded yam or boiled & blended yam)",
+      "Utazi leaves",
+      "Seasoning cubes",
+      "Salt"
+    ],
+    "instructions": [
+      "Boil meat and stockfish with seasoning until soft.",
+      "Add yam puree to thicken soup.",
+      "Add catfish and cook gently.",
+      "Add utazi leaves and adjust seasoning.",
+      "Simmer for 5 mins and serve hot."
+    ]
+  }
+]
