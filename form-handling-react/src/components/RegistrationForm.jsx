@@ -4,12 +4,24 @@ const RegistrationForm = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    let validationErrors = {};
 
-    if (!username || !email || !password) {
-      alert("All fields are required!");
+    if (!username) {
+      validationErrors.username = "Username is required";
+    }
+    if (!email) {
+      validationErrors.email = "Email is required";
+    }
+    if (!password) {
+      validationErrors.password = "Password is required";
+    }
+
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
       return;
     }
 
@@ -19,6 +31,7 @@ const RegistrationForm = () => {
     setUsername("");
     setEmail("");
     setPassword("");
+    setErrors({});
   };
 
   return (
@@ -33,6 +46,7 @@ const RegistrationForm = () => {
           onChange={(e) => setUsername(e.target.value)}
           className="border px-2 py-1 w-full"
         />
+        {errors.username && <p className="text-red-500">{errors.username}</p>}
       </div>
 
       <div className="mb-2">
@@ -43,6 +57,7 @@ const RegistrationForm = () => {
           onChange={(e) => setEmail(e.target.value)}
           className="border px-2 py-1 w-full"
         />
+        {errors.email && <p className="text-red-500">{errors.email}</p>}
       </div>
 
       <div className="mb-2">
@@ -53,6 +68,7 @@ const RegistrationForm = () => {
           onChange={(e) => setPassword(e.target.value)}
           className="border px-2 py-1 w-full"
         />
+        {errors.password && <p className="text-red-500">{errors.password}</p>}
       </div>
 
       <button
