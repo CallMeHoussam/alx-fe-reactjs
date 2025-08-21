@@ -1,4 +1,6 @@
-import { Outlet, Link, useLocation } from 'react-router-dom';
+import { Outlet, Link, useLocation, Routes, Route } from 'react-router-dom';
+import ProfileDetails from './ProfileDetails';
+import ProfileSettings from './ProfileSettings';
 
 function Profile() {
   const location = useLocation();
@@ -14,6 +16,11 @@ function Profile() {
           Settings
         </Link>
       </nav>
+      <Routes>
+        <Route path="details" element={<ProfileDetails />} />
+        <Route path="settings" element={<ProfileSettings />} />
+        <Route index element={<ProfileDetails />} />
+      </Routes>
       <Outlet />
     </div>
   );
