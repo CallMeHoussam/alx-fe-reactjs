@@ -1,4 +1,5 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { describe, test, expect } from 'vitest';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import TodoList from '../components/TodoList';
 
@@ -47,11 +48,12 @@ describe('TodoList Component', () => {
     const user = userEvent.setup();
     render(<TodoList />);
     
-    const initialTodoCount = screen.getAllByRole('listitem').length;
+    const initialTodos = screen.getAllByRole('listitem');
     const addButton = screen.getByText('Add Todo');
     
     await user.click(addButton);
     
-    expect(screen.getAllByRole('listitem')).toHaveLength(initialTodoCount);
+    const currentTodos = screen.getAllByRole('listitem');
+    expect(currentTodos).toHaveLength(initialTodos.length);
   });
 });
